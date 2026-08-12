@@ -1,5 +1,8 @@
 # STM32F103 FOC 无刷电机控制项目
 
+> **DENG-FOC-STM32-PORTING** —— 灯哥 FOC 的 STM32 移植。原库基于 Arduino/ESP32，本仓库移植到 STM32F103 + 标准外设库，并自己实现了时间轴（当前时间 `micros()`）相关函数。
+
+
 > 基于 **STM32F103C8T6（BluePill / 最小系统板）** 移植 **灯哥（ToanTech）DengFOC 开源库** 的磁场定向控制（FOC）项目，支持速度环、角度环、电流环三环控制，并通过串口与上位机/调试助手实时交互。
 
 本仓库代码在 **Keil MDK (uvprojx)** 工程中开发，使用 **STM32 标准外设库 (Standard Peripheral Library, SPL 3.5)**。
