@@ -1,0 +1,35 @@
+# Keil MDK 编译产物
+Objects/
+Listings/
+DebugConfig/
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.htm
+*.map
+*.lst
+*.lnp
+*.dep
+*.sct
+*.iex
+*.bak
+*.plg
+*.rpt
+*.tmp
+*.__i
+*.tra
+*.build_log.htm
+
+# Keil 个人界面/选项配置（每台电脑不同）
+*.uvguix.*
+*.uvoptx
+
+# 调试日志
+*.log
+Data.log
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db

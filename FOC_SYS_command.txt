@@ -1,0 +1,21 @@
+/setvel N
+/setang N
+/setprog N
+/setpidvel KP KI KD Ramp Limit
+/setpidcur KP KI KD Ramp Limit
+/setpidang KP KI KD Ramp Limit
+/showpid
+/showvel
+/showang
+/showcur
+
+/setvel  30(速度设置：30rads/s)
+/setang 3.14(角度设置：180度)
+/setprog  2（程序设置：2号程序）
+/setpidvel 0.02 1 0 100000 30（P参数、I参数、D参数、Ramp，输出限制）
+/setpidcur 5 200 0 100000 12
+/setpidang 10 1 0.01 100000 30
+/showpid（显示PID参数）
+/showvel（显示速度）
+/showang（显示角度）
+/showcur（显示直轴电流Id）
