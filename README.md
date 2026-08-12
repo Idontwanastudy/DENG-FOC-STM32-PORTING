@@ -1,8 +1,5 @@
 # STM32F103 FOC 无刷电机控制项目
 
-> **DENG-FOC-STM32-PORTING** —— 灯哥 FOC 的 STM32 移植。原库基于 Arduino/ESP32，本仓库移植到 STM32F103 + 标准外设库，并自己实现了时间轴（当前时间 `micros()`）相关函数。
-
-
 > 基于 **STM32F103C8T6（BluePill / 最小系统板）** 移植 **灯哥（ToanTech）DengFOC 开源库** 的磁场定向控制（FOC）项目，支持速度环、角度环、电流环三环控制，并通过串口与上位机/调试助手实时交互。
 
 本仓库代码在 **Keil MDK (uvprojx)** 工程中开发，使用 **STM32 标准外设库 (Standard Peripheral Library, SPL 3.5)**。
@@ -14,6 +11,7 @@
 - [项目简介](#项目简介)
 - [参考开源项目](#参考开源项目)
 - [硬件方案](#硬件方案)
+- [PCB 硬件资源](#pcb-硬件资源)
 - [控制原理](#控制原理)
 - [USART 实时控制系统（本仓库亮点）](#usart-实时控制系统本仓库亮点)
 - [工程结构](#工程结构)
@@ -82,6 +80,26 @@ volts_2_amps_ratio = 1.0f / shunt_resistor / amp_gain;
 ```
 
 并在上电时执行 `Take_offset()`（1000 次采样求平均）得到零漂补偿。
+
+---
+
+## PCB 硬件资源
+
+本项目的 **PCB 制造文件与原理图** 单独存放在 `PCB-&-Circuit-diagram` 分支，与 `main` 分支的源码分离管理：
+
+| 文件 | 说明 |
+| --- | --- |
+| `Gerber_PCB1_2026-08-12.zip` | PCB 制造文件（Gerber），可直接发给板厂打样 |
+| `SCH_DengFOC V3.01_2026-08-12.pdf` | 原理图（PDF 版），可查看电路连接 |
+
+**如何获取：**
+
+- 网页端：仓库首页 → 分支下拉框选择 `PCB-&-Circuit-diagram` → 即可看到并下载这两个文件
+- 命令行：
+  ```bash
+  git clone -b PCB-&-Circuit-diagram git@github.com:Idontwanastudy/DENG-FOC-STM32-PORTING.git
+  ```
+- 注意：该分支为独立历史（孤儿提交），仅包含上述两个 PCB 文件，不含源码。
 
 ---
 
